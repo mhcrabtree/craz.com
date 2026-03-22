@@ -1,0 +1,30 @@
+#form-messages {
+  margin-bottom: 16px;
+  font-family: Nunito, sans-serif;
+  font-size: 15px;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Error styling */
+#form-messages.error {
+  color: #d33;
+}
+
+#form-messages.error::before {
+  content: "⚠️";
+  font-size: 18px;
+}
+
+/* Success styling */
+#form-messages.success {
+  color: #2a8f2a;
+}
+
+#form-messages.success::before {
+  content: "✔️";
+  font-size: 18px;
+}

@@ -1,0 +1,200 @@
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --footer: rgba(0, 0, 0, 0.45);
+}
+
+/* Base layout for centered pages (like index) */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Grandstander', cursive;
+}
+
+/* helper class to preserve the old centered/index layout */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  max-width: 700px;
+  padding: 20px;
+  margin-top: -100px; /* moves content UP for visual balance */
+}
+
+img.logo {
+  width: 260px;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+img.logo.small {
+  width: 120px;
+  max-width: 70%;
+  margin-bottom: 0;
+}
+
+h1.slogan {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0 10px;
+}
+
+@media (max-width: 480px) {
+  h1.slogan { font-size: 1.4rem; }
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: var(--footer);
+  pointer-events: none;
+  user-select: none;
+  background: var(--bg);
+  z-index: 20;
+  padding: 12px 0;
+}
+
+/* Navigation used for centered pages */
+.container > nav { margin-top: 18px; }
+
+.container > nav > ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container > nav > ul > li { margin: 0; }
+
+.container a {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: background .18s ease, transform .12s ease, color .18s;
+  display: inline-block;
+}
+
+.container a:hover,
+.container a:focus {
+  background: rgba(0,0,0,0.06);
+  color: var(--text);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.container a[aria-current="page"] {
+  background: rgba(0,0,0,0.08);
+  font-weight: 600;
+}
+
+/* Mobile: stack for touch */
+@media (max-width: 480px) {
+  .container > nav > ul { flex-direction: column; gap: 10px; }
+  .container a { padding: 12px 14px; }
+}
+
+/* Header layout for pages that keep logo upper-left and nav upper-right */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg);
+  z-index: 30;
+}
+
+/* Keep the site logo pinned to the left */
+.site-header .logo { margin: 0; }
+
+/* Right-justified nav container */
+.site-header nav {
+  margin-left: auto;
+}
+
+.site-header nav ul {
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  /* make the visual order start at the right and flow left */
+  /* flex-direction: row-reverse; */
+  align-items: center;
+}
+
+.site-header nav a {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background .12s ease, transform .08s ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus { background: rgba(0,0,0,0.06); transform: translateY(-2px); }
+
+.site-header nav a[aria-current="page"] { background: rgba(0,0,0,0.08); font-weight: 600; }
+
+/* Main content for story page */
+.main-article {
+  max-width: 760px;
+  margin: 120px auto 60px; /* push under fixed header so content starts below it */
+  padding: 18px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.main-article h1,
+.main-article h2 { font-family: 'Grandstander', cursive; margin-top: 0; }
+
+.main-article hr { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 20px 0; }
+
+.main-article a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.main-article a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .main-article { margin: 100px 14px 60px; }
+  .site-header { padding: 12px 14px; }
+  img.logo.small { width: 96px; }
+  .main-article h1 { font-size: 1.6rem; }
+}
+

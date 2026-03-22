@@ -1,0 +1,97 @@
+/* ----------------------------------------
+   Brand List Layout
+   ---------------------------------------- */
+
+.brand-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+/* ----------------------------------------
+   Individual Brand Item
+   ---------------------------------------- */
+
+.brand-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.brand-item:last-child {
+  border-bottom: none;
+}
+
+/* ----------------------------------------
+   Logo
+   ---------------------------------------- */
+
+.brand-logo {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 14px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ----------------------------------------
+   Text Content
+   ---------------------------------------- */
+
+.brand-content h3 {
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+  font-family: "Grandstander", cursive;
+  font-size: 1.35rem;
+}
+
+.brand-content p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  font-family: "Nunito", sans-serif;
+  color: var(--text, #333);
+}
+
+/* ----------------------------------------
+   Visit Link
+   ---------------------------------------- */
+
+.brand-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------
+   Mobile Adjustments
+   ---------------------------------------- */
+
+@media (max-width: 480px) {
+  .brand-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-logo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .brand-content h3 {
+    margin-top: 0.5rem;
+  }
+}

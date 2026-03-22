@@ -1,0 +1,61 @@
+# macOS
+.DS_Store
+
+# Node / JS
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+.env.*
+
+# Ruby
+.bundle/
+
+# Build outputs
+dist/
+build/
+.out/
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+Thumbs.db
+Icon
+
+# Static site / docs
+docs/
+
+# Logs
+*.log
+
+# Coverage
+.coverage
+htmlcov/
+
+# Misc
+.cache/
+.sass-cache/
+*.tmp
+
+# Images or other binary assets you may want to ignore (uncomment if needed)
+# images/
+
+# Ignore local secrets
+secrets/
+
+# Ensure gitignore itself is tracked
+!/.gitignore
