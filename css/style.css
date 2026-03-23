@@ -123,15 +123,28 @@ h1.slogan {
   width: 100%;
   box-sizing: border-box;
   padding: 18px 24px;
+  /* respect the notch / status bar on iPhone */
+  padding-top: calc(18px + env(safe-area-inset-top));
+  padding-bottom: 18px;
   display: flex;
   align-items: center;
   gap: 16px;
   background: var(--bg);
   z-index: 30;
+
+  /* force compositing to avoid Safari repaint/clipping issues on iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
 }
 
 /* Keep the site logo pinned to the left */
-.site-header .logo { margin: 0; }
+.site-header .logo { 
+  margin: 0;
+  display: block;
+  max-height: 56px;
+  height: auto;
+}
 
 /* Right-justified nav container */
 .site-header nav {
