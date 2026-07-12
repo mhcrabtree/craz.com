@@ -39,6 +39,9 @@ Icon
 # Static site / docs
 docs/
 
+# Scripts
+scripts/
+
 # Logs
 *.log
 
